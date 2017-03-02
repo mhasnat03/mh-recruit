@@ -2,7 +2,7 @@ class ApplicationsController < ApplicationController
 	attr_accessor :application 
 
 	def new 
-		puts params
+		
 		@application = Application.new(:school_id => params[:school][:name] )
 		@student = Student.new
 	end 
