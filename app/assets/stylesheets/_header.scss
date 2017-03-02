@@ -1,0 +1,32 @@
+#main-header {
+  min-height: 50px;
+  background: #00BFFF;
+  color: white;
+  position: relative;
+  padding: 0 20px;
+  line-height: 100%;
+  
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 1px 3px 0px rgba(0,0,0,0.75);
+}
+
+#main-header > .logo {
+  width: 150px;
+  height: 150px;
+  display: inline-block;
+  background: image-url('mh-recruit_logo.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#main-header > .title {
+  font-size: 2rem;
+  font-weight: 100;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+

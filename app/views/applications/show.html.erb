@@ -1,0 +1,44 @@
+<div class="profile">
+	<h1>Student Profile</h1>
+</div>
+<div class="panel panel-default">
+		<div class="panel-body">
+
+
+<p> <%= image_tag(@application.avatar.url(:small)) %> </p>
+<p> First Name: <%= @application.student.first_name %> </p>
+<p> Last Name: <%= @application.student.last_name %> </p>
+<p> Email: <%= @application.student.email %> </p>
+<p> Phone #: <%= @application.student.phone %> </p>
+<p> Address: <%= @application.student.street %> </p>
+<p> Address: <%= @application.student.city + ", " +  @application.student.state + ", " + @application.student.zip_code%> </p>
+<p> Date of Birth: <%= @application.student.dob %> </p>
+<p> Social Security: <%= @application.student.social %> </p>
+<p> Semester: <%= @application.semester %> </p>
+<p> Expected Graduation date: <%= @application.grad_date %> </p>
+<p> Area of Study: <%= @application.major %> </p>
+<p> GPA: <%= @application.gpa %> </p>
+<p> SAT SCORE: <%= @application.sat_score %> </p>
+<p> Immunization Complete? : <%= @application.immunization %> </p>
+<p> Financial Aid required : <%= @application.fin_aid %> </p>
+<p> Scholarships : <%= @application.scholarships %> </p>
+<p> About: <%= @application.about %> </p>
+<p> Transcript: <%= link_to('View transcript', @application.transcript.url) %> </p>
+<p> Recommendation Letter: <%= link_to('View Recommendation Letter', @application.recommendation.url) %> </p>
+<p> Additional Document: <%= link_to('View Additional Document', @application.other_document.url) %> </p>
+<p> Status: <%= @application.status %> </p>
+
+<p>
+<%= form_for @application, :url => accept_application_path(@application.id), :method => 'put' do |f| %> 	
+		<%= f.submit 'ACCEPT' %>
+<% end %>
+
+</p>
+<p>
+<%= form_for @application, :url => reject_application_path(@application.id), :method => 'put' do |f| %> 	
+		<%= f.submit 'REJECT' %>
+<% end %>
+</p>
+
+</div>
+		</div>

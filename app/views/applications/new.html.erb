@@ -1,0 +1,128 @@
+<div class='app'>
+	<h1>Application </h1>
+	<% if @application.errors.any? %>
+	<ul>
+	<%@application.errors.full_messages.each do |error|%>
+	 		<li><%= error %></li>
+	 <%end %> 
+	<ul>
+	<%end%>
+	<% if @student.errors.any? %>
+	<ul>
+	<%@student.errors.full_messages.each do |error|%>
+	 		<li><%= error %></li>
+	 <%end %> 
+	<ul>
+	<%end%>
+	<p><%=link_to('Not the school of your choice? click here to go back to homepage', root_path)%></p>
+
+	<%=form_for([@application, @student], html: {multipart: true}, :url => applications_path(@application, @student)) do |f|  %> 
+
+		<div class="form-group ">
+			<div>
+		<%= hidden_field(:application, :school_id, :value => @application.school_id) %>
+		</div>
+
+	<div class='sem'>
+		<%= radio_button(:application, :semester, 'fall') %>
+		<%= label(:application, :semester, 'Fall') %>
+		<%= radio_button(:application, :semester, 'spring') %>
+		<%= label(:application, :semester, 'Spring') %>
+	</div>
+
+	<div class='sem'>
+	<%= label(:student, :social, 'Social Security: ') %>
+	<%= phone_field(:student, :social) %>
+	</div>
+	<div class='sem'>
+	<%= label(:student, :first_name, 'Given Name: ') %>
+	<%= text_field(:student, :first_name) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:student, :last_name, 'Surname: ') %>
+	<%= text_field(:student, :last_name) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:student, :dob, 'Date of birth ') %>
+	<%= text_field(:student, :dob) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:student, :email, 'Email: ') %>
+	<%= text_field(:student, :email) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:student, :phone, 'Phone: ') %>
+	<%= text_field(:student, :phone) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:student, :street, 'Street Name: ') %>
+	<%= text_field(:student, :street) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:student, :city, 'City: ') %>
+	<%= text_field(:student, :city) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:student, :state, 'State: ') %>
+	<%= text_field(:student, :state) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:student, :zip_code, 'Zip Code: ') %>
+	<%= text_field(:student, :zip_code) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:application, :major, 'Study area of Interest: ') %>
+	<%= text_field(:application, :major) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:application, :gpa, 'Current GPA: ') %>
+	<%= text_field(:application, :gpa) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:application, :sat_score, 'Most recent SAT score: ') %>
+	<%= text_field(:application, :sat_score) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:application, :grad_date, 'What is your expected graduation date? ') %>
+	<%= text_field(:application, :grad_date) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:application, :fin_aid, 'Do you require Financail Aid? ') %>
+	<%= text_field(:application, :fin_aid) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:application, :scholarships, 'Do you have any Scholarships? ') %>
+	<%= text_field(:application, :scholarships) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:application, :immunization, 'Have you completed all your immunization? ') %>
+	<%= text_field(:application, :immunization) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:application, :about, 'Please tell us a little about your self: ') %>
+	<%= text_field(:application, :about) %>	
+	</div>	
+	<div class='sem'>
+	<%= label(:application, :avatar, 'Upload Image') %>
+	<%= file_field(:application, :avatar) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:application, :transcript, 'Upload transcript') %>
+	<%= file_field(:application, :transcript) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:application, :recommendation, 'Upload a recommendation letter') %>
+	<%= file_field(:application, :recommendation) %>	
+	</div>
+	<div class='sem'>
+	<%= label(:application, :other_document, 'Upload a document') %>
+	<%= file_field(:application, :other_document) %>	
+	</div>
+	<div class='sem'>
+
+	<div class='sem'> <%= submit_tag 'Submit Application' %></div>
+		
+		</div>
+	<% end %>
+
+</div>

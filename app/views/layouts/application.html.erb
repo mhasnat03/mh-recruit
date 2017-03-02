@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>MhRecruit</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+ <%=render 'layouts/header' %> 
+	<nav>
+		
+		<% if user_signed_in?%>
+				
+					<p>Hello, <%= (current_user.first_name + ' ' + current_user.last_name) %></p>
+				
+					<p>School Name: <%= (current_user.school.name) %></p>
+				
+					<p><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %></p>
+				
+			<% end %>
+		
+		
+	</nav>
+	<% if flash.notice %>
+			<div class="notice"><%= flash.notice %></div>
+		<% end %>
+		<% if flash.alert %>
+			<div class="notice"><%= flash.alert %></div>
+		<% end %>	
+
+
+
+<%= yield %>
+
+
+<%= render 'layouts/footer' %>
+</body>
+
+
+
+
+</html>

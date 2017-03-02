@@ -1,0 +1,29 @@
+#main_container {
+	padding: 200px 0;
+	overflow: hidden;
+	
+}
+
+#student_container {
+	
+	
+	padding: 100px;
+	border-right: 3px solid #ccc;
+
+
+}
+
+#student_container, #counselor_container {
+	margin: 0 auto;
+	display: inline-block;
+	width: calc(50% - 2px);
+	text-align: center;
+	
+
+}
+
+#counselor_container {
+	
+	
+	padding: 100px;
+}
