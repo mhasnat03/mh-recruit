@@ -1,32 +1,36 @@
 <div id="main_container" >
-		<div id="student_container">
+	<div id="student_container">
 		<h1>STUDENT</h1>
 			<%= form_for :school, :url =>  new_application_path, :method => 'get' do |f| %>
 				<p>
-				<%= f.select :name, School.all.collect { |s| [ s.name, s.id]} %>
-				<%= f.submit 'Find Application' %>
+					<%= f.select :name, School.all.collect { |s| [ s.name, s.id]} %>
+					<%= f.submit 'Find Application' %>
 				</p>
+				
 				<P>Please select a school from the dropdown 
+				
 				<p> to complete and submit an application.</P>
 
 
-		<% end %>
+					<% end %>
 
-		</div>
+	</div>
 
 
-		<div id="counselor_container">
+	<div id="counselor_container">
 		<h1>COUNSELOR</h1>
-			<%= form_for :user, :url =>  new_user_session_path, :method => 'get' do |f| %>
+				<%= form_for :user, :url =>  new_user_session_path, :method => 'get' do |f| %>
 			<p>
-			<%= f.submit 'Log In As Counselor' %>
+				<%= f.submit 'Log In As Counselor' %>
 			</p>
+			
 			<P>Please enter to log in as counselor.</P>
+			
 			<P>Thank You.</P>
 
-		<% end %>
+				<% end %>
 
-		</div>
+	</div>
 
 </div>
 

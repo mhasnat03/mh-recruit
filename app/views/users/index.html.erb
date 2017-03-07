@@ -1,20 +1,14 @@
 <div class="dashboard">
 	<h1>All Students Dashboard</h1>
-
-
-
-  		
-
-		
 		<%@applications.each do |application| %>
-		<div class="panel panel-default">
-		<div class="panel-body">
-		 <p><%= image_tag(application.avatar.url(:small)) %></p><p> Name: <%= application.student.first_name + ' ' + application.student.last_name  %> </p> <p> Major: <%= application.major %></p>
-		<p>Email: <%= application.student.email%> </p> <p> GPA: <%= application.gpa %> </p> <p>Application Status: <%= application.status %></p>
-		<p><%= link_to('Student Profile', application_path(application.id)) %></p>
-		</div>
-		</div>
-		<% end %> 
+			<div class="panel panel-default">
+				<div class="panel-body">
+				 <p><%= image_tag(application.avatar.url(:small)) %></p><p> Name: <%= application.student.first_name + ' ' + application.student.last_name  %> </p> <p> Major: <%= application.major %></p>
+				<p>Email: <%= application.student.email%> </p> <p> GPA: <%= application.gpa %> </p> <p>Application Status: <%= application.status %></p>
+				<p><%= link_to('Student Profile', application_path(application.id)) %></p>
+				</div>
+			</div>
+				<% end %> 
 </div>
 		
 	
